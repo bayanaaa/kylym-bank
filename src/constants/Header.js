@@ -9,9 +9,26 @@ export const headerArr = {
   ],
   main: [
     { title: "Главная", link: "/" },
-    { title: "Кредиты", link: "/credits", show: true },
+    {
+      title: "Кредиты",
+      show: true,
+      menu: [
+        { text: "Все", link: "/all-credits" },
+        { text: "Авто-кредит", link: "/auto-credit" },
+        { text: "Онлайн-кредит", link: "/online-credit" },
+        { text: "Экспресс", link: "/express-credit" },
+      ],
+    },
     { title: "Тарифы", link: "/tariffs" },
-    { title: "Депозиты", link: "/deposits", show: true },
+    {
+      title: "Депозиты",
+      show: true,
+      menu: [
+        { text: "Все", link: "/all-deposits" },
+        { text: "Онлайн-депозит", link: "/online-deposit" },
+        { text: "Экспресс", link: "/express-deposit" },
+      ],
+    },
     { title: "Карты", link: "/cards", show: true },
     { title: "Денежные переводы", link: "/transfers" },
     { title: "Еще", link: "/more", show: true },
