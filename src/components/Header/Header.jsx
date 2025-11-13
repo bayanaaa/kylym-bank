@@ -26,6 +26,7 @@ function Header() {
   const [catOpen, setCatOpen] = useState(false);
   const [burgerLangOpen, setBurgerLangOpen] = useState(false);
   const [hoverMenu, setHoverMenu] = useState(null);
+  const [openMenu, setOpenMenu] = useState(null);
 
   const searchRef = useRef(null);
   const langRef = useRef(null);
@@ -94,7 +95,16 @@ function Header() {
         {hasMenu && hoverMenu === el.title && (
           <div className={scss.dropdown}>
             {el.menu.map((item, idx) => (
-              <Link key={idx} to={item.link} className={scss.dropdownItem}>
+              <Link
+                key={idx}
+                to={item.link}
+                onClick={() => {
+                  setHoverMenu(null), setActive(item.text);
+                }}
+                className={`${scss.dropdownItem} ${
+                  active === el.text ? scss.active2 : ""
+                }`}
+              >
                 {item.text}
               </Link>
             ))}
@@ -250,25 +260,59 @@ function Header() {
                   {catOpen && <div className={scss.mobNav1}>{topNavs}</div>}
                 </div>
 
-                {/* Основные ссылки */}
                 <div className={scss.mobNav2}>
                   {headerArr.main.map((el, index) => (
                     <div className={scss.text} key={index}>
                       {el.show && <img src={arrow} alt="arrow" />}
-                      <Link
-                        to={el.link}
-                        className={`${scss.link2} ${
-                          el.title === active || pathname === el.link
-                            ? scss.active
-                            : ""
-                        }`}
-                        onClick={() => {
-                          setActive(el.title);
-                          setBurgerOpen(false);
-                        }}
-                      >
-                        {el.title}
-                      </Link>
+                      {el.link ? (
+                        <Link
+                          to={el.link}
+                          className={`${scss.link2} ${
+                            el.title === active || pathname === el.link
+                              ? scss.active
+                              : ""
+                          }`}
+                          onClick={() => {
+                            setActive(el.title);
+                            setBurgerOpen(false);
+                          }}
+                        >
+                          {el.title}
+                        </Link>
+                      ) : (
+                        <div className={scss.wrap}>
+                          <div
+                            className={`${scss.link2} ${
+                              el.title === active || pathname === el.link
+                                ? scss.active
+                                : ""
+                            }`}
+                            onClick={() => setOpenMenu(el.title)}
+                          >
+                            {el.title}
+                          </div>
+                          {openMenu === el.title && (
+                            <div className={scss.menu}>
+                              {el.menu?.map((el, index) => (
+                                <Link
+                                  to={el.link}
+                                  onClick={() => {
+                                    setBurgerOpen(false), setActive(el.text);
+                                  }}
+                                  key={index}
+                                  className={`${scss.text} ${
+                                    el.text === active || pathname === el.link
+                                      ? scss.active
+                                      : ""
+                                  }`}
+                                >
+                                  {el.text}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

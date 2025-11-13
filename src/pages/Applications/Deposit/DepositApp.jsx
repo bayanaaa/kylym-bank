@@ -1,44 +1,72 @@
 import React from "react";
 import scss from "../../Applications/Applications.module.scss";
+import img from "../../../assets/arrow.svg";
 import frame from "../../../assets/frame.svg";
-import down from "../../../assets/arrow.svg";
 
-function CardApp() {
+function DepositApp() {
   return (
     <div className="container">
       <div className={scss.content}>
-        <h2>Заявка на карту</h2>
-        <div className={scss.main}>
-          <form action="" className={scss.form}>
+        <h2>Заявка на депозит</h2>
+        <div className={scss.main2}>
+          <form action="" className={scss.form2}>
             <div className={scss.input_block}>
-              <label htmlFor="Номер телефона">Номер телефона</label>
+              <label htmlFor="Сумма(сомах)">Сумма(сомах)</label>
               <input
                 type="text"
+                name="Сумма(сомах)"
+                placeholder="550 000 с"
                 required
-                placeholder="Номер телефона"
-                name="Номер телефона"
               />
             </div>
             <div className={scss.input_block}>
               <label htmlFor="Имя">Имя</label>
-              <input type="text" placeholder="Имя" name="Имя" required />
+              <input type="text" name="Имя" placeholder="Имя" required />
+            </div>
+            <div className={scss.input_block2}>
+              <div>
+                <label htmlFor="Срок">Срок</label>
+                <input type="text" name="Срок" placeholder="5 лет" required />
+              </div>
+              <img src={img} alt="arrow" />
             </div>
             <div className={scss.input_block}>
               <label htmlFor="Фамилия">Фамилия</label>
               <input
                 type="text"
-                placeholder="Фамилия"
                 name="Фамилия"
+                placeholder="Фамилия"
                 required
               />
+            </div>
+            <div className={scss.input_block2}>
+              <div>
+                <label htmlFor="Цель депозит">Цель депозит</label>
+                <input
+                  type="text"
+                  name="Цель депозит"
+                  placeholder="Цель депозит"
+                  required
+                />
+              </div>
+              <img src={img} alt="arrow" />
             </div>
             <div className={scss.input_block}>
               <label htmlFor="Электронная почта">Электронная почта</label>
               <input
-                required
-                type="email"
-                placeholder="Электронная почта"
+                type="text"
                 name="Электронная почта"
+                placeholder="user@gmail.com"
+                required
+              />
+            </div>
+            <div className={scss.input_block}>
+              <label htmlFor="Номер телефона">Номер телефона</label>
+              <input
+                type="text"
+                name=""
+                placeholder="+996 (700) 700 - 700"
+                required
               />
             </div>
             <div className={scss.bottom}>
@@ -78,4 +106,4 @@ function CardApp() {
   );
 }
 
-export default CardApp;
+export default DepositApp;

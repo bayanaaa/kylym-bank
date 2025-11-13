@@ -3,12 +3,12 @@ import scss from "../Deposit.module.scss";
 import { Link } from "react-router";
 import illust from "../../../assets/illust2.svg";
 import arrow from "../../../assets/arrow3.svg";
-import { depArr } from "../../../constants/Main";
 import Cards from "../../Cards/Cards";
+import { depArr3 } from "../../../constants/Main";
 
 const arr = ["СОМ", "USD", "KZT", "RUB", "RUB"];
 
-function AllDeposits() {
+function ExpressDeposit() {
   const [selected, setSelected] = useState("СОМ");
 
   const currencies = arr.map((el, index) => (
@@ -21,27 +21,11 @@ function AllDeposits() {
     </p>
   ));
 
-  const cards = depArr.map((el) => <Cards {...el} />);
+  const cards = depArr3.map((el) => <Cards {...el} />);
 
   return (
     <div className={scss.parent}>
-      <div className={scss.banner}>
-        <div className="container">
-          <div className={scss.bannerContent}>
-            <article>
-              <h2>Быстрый депозит</h2>
-              <p>
-                Получайте до 13% годовых в сомах, до 3% в долларах и до 1% в
-                евро
-              </p>
-              <Link to="/more-detailed" state={{ type: "deposit" }} className={scss.link}>
-                Подробнее
-              </Link>
-            </article>
-            <img src={illust} alt="" />
-          </div>
-        </div>
-      </div>
+     
       <>
         <div className="container">
           <div className={scss.content}>
@@ -81,7 +65,7 @@ function AllDeposits() {
                 <div>
                   Сумма в конце срока <p>1130.00 с</p>
                 </div>
-                <Link to="/more-detailed" className={scss.link}>
+                <Link to="/more-detailed"  state={{ type: "deposit" }} className={scss.link}>
                   Подробнее
                 </Link>
               </div>
@@ -94,4 +78,4 @@ function AllDeposits() {
   );
 }
 
-export default AllDeposits;
+export default ExpressDeposit;
