@@ -1,0 +1,122 @@
+.card {
+  background: #ffffff;
+  border: 1px solid #b1b1b126;
+  border-radius: 25px;
+  padding: 50px 35px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  .name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #484848;
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+    height: 30px;
+  }
+  h3 {
+    font-size: 30px;
+    font-weight: 500;
+    color: #0f0f0f;
+    line-height: 40px;
+    margin-top: 30px !important;
+  }
+  .desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: #484848;
+    line-height: 26px;
+    width: 60%;
+    margin-top: 8px !important;
+  }
+  .info {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .heading {
+        font-size: 14px;
+        font-weight: 400;
+        color: #484848;
+      }
+      .desc {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 600;
+        color: #0f0f0f;
+        white-space: nowrap;
+      }
+    }
+  }
+  .btn {
+    margin-top: 35px !important;
+    background: #ffdd2d;
+    box-shadow: 0px 1px 1.4px 0px #00000029;
+    border-radius: 10px;
+    padding: 10px;
+    width: 180px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .card {
+    display: flex;
+    flex-direction: column-reverse;
+    .image {
+      // transform: translateX(45%);
+      display: flex;
+      justify-content: center;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .card {
+    padding: 0 20px 20px 20px;
+    border-radius: 15px;
+    .name {
+      font-size: 14px;
+    }
+    h3 {
+      font-size: 20px;
+      margin-top: 10px !important;
+    }
+    .desc {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 20px;
+      width: unset;
+    }
+    .info {
+      flex-direction: column;
+      justify-content: unset;
+      align-items: start;
+      margin-top: 25px;
+      gap: 15px;
+      .block {
+        gap: 0;
+      }
+    }
+    .btn {
+      margin-top: 20px !important;
+    }
+  }
+}
