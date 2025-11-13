@@ -10,6 +10,10 @@
     margin-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    .section {
+      grid-template-columns: 1fr;
+    }
   }
   .main2 {
     display: flex;
@@ -126,6 +130,86 @@
           color: #0f0f0f;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .content {
+    margin: 25px 0 50px 0;
+    .main2 {
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .main {
+      grid-template-columns: 1fr;
+      margin-top: 20px;
+      .section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        .block {
+          padding: 20px;
+          border-radius: 15px;
+          .head {
+            p {
+              font-size: 18px;
+            }
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .section {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      .block {
+        padding: 20px;
+        border-radius: 15px;
+        .head {
+          p {
+            font-size: 18px;
+          }
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+    .bottom {
+      flex-direction: column-reverse;
+      width: 100%;
+      justify-content: end;
+      align-items: end;
+      button {
+        height: 40px;
+        width: 150px;
+      }
+      p {
+        width: 100%;
+      }
+    }
+    .input_block {
+      border-radius: 12px;
+      label {
+        font-size: 12px;
+      }
+    }
+    .input_block2 {
+      div {
+        label {
+          font-size: 12px;
+        }
+      }
+    }
+    h2 {
+      font-size: 25px;
+      text-align: start;
+    }
+    .form2 {
+      grid-template-columns: 1fr;
+      gap: 15px;
     }
   }
 }

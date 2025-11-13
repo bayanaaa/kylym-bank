@@ -1,0 +1,195 @@
+.content {
+  margin: 30px 0 70px 0;
+
+  .banner {
+    background: #f9f9f9;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 50px 50px 50px 100px;
+    position: relative;
+    .image {
+      position: absolute;
+      right: 70px;
+      bottom: 0px;
+      // top: 50px;
+      // height: 300px
+      img {
+        height: 400px;
+      }
+    }
+    article {
+      h2 {
+        font-size: 45px;
+        color: #0f0f0f;
+        font-weight: 700;
+      }
+      p {
+        margin-top: 10px !important;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        color: #1e1e1e;
+        width: 60%;
+      }
+      div {
+        img {
+          padding: 15px;
+          border-radius: 15px;
+          background: #ffffff;
+          width: 150px;
+          height: 150px;
+        }
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+    }
+  }
+  .infoCards {
+    display: flex;
+    margin-top: 35px;
+    justify-content: space-between;
+    gap: 25px;
+    .info {
+      width: 100%;
+      padding: 35px;
+      background: #fcfcfc;
+      border-radius: 25px;
+      .head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #0f0f0f;
+      }
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        color: #484848;
+        margin-top: 8px !important;
+      }
+    }
+  }
+  .instruction {
+    margin-top: 55px;
+    h2 {
+      font-size: 35px;
+      font-weight: 700;
+      color: #0f0f0f;
+    }
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      margin-top: 30px;
+      gap: 30px;
+      .card {
+        border-radius: 25px;
+        img {
+          width: 100%;
+          border-top-left-radius: 25px;
+          border-top-right-radius: 25px;
+        }
+        div {
+          padding: 20px 30px;
+          background: #fff;
+          .step {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0f0f0f;
+          }
+          .desc {
+            font-size: 16px;
+            margin-top: 6px !important;
+            font-weight: 400;
+            color: #484848;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .content {
+    .banner {
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 20px;
+      gap: 20px;
+      border-radius: 15px;
+      article {
+        width: 100%;
+        h2 {
+          font-size: 25px;
+        }
+        p {
+          margin-top: 5px !important;
+          line-height: 20px;
+        }
+        div {
+          margin-top: 20px;
+        }
+      }
+      .image {
+        position: static;
+        img {
+          height: 300px;
+        }
+      }
+    }
+    .infoCards {
+      flex-wrap: wrap;
+    }
+  }
+  .infoCards {
+    margin-top: 30px !important;
+    gap: 20px !important;
+    .info {
+      border-radius: 15px !important;
+      padding: 20px !important;
+      .head {
+        font-size: 18px !important;
+      }
+      p {
+        font-size: 14px !important;
+      }
+    }
+  }
+  .instruction {
+    margin-top: 30px !important;
+    h2 {
+      font-size: 25px !important;
+    }
+    .main {
+      margin-top: 20px !important;
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .content {
+    .instruction {
+      .main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        .card {
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          div {
+            padding: 20px !important;
+          }
+          img {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+          }
+        }
+      }
+    }
+  }
+}

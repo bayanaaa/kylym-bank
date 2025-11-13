@@ -147,6 +147,7 @@
           min-width: 200px;
           z-index: 10;
           padding: 5px;
+          animation: menu 0.3s ease forwards;
         }
         .dropdownItem {
           padding: 10px 20px;
@@ -155,9 +156,10 @@
           text-decoration: none;
           border-radius: 5px;
           transition: 0.2s ease-in;
-          &:hover {
-            background-color: #f0f0f0;
-          }
+        }
+        .dropdownItem:hover,
+        .active2 {
+          background-color: #fafafa;
         }
       }
 
@@ -219,7 +221,7 @@
   }
 }
 
-@media (max-width: 770px) {
+@media (max-width: 1000px) {
   .parent {
     .content {
       position: relative;
@@ -241,6 +243,7 @@
       align-items: center;
       .burgerMenu {
         padding: 30px 15px;
+        animation: forBurger 0.4s ease;
         position: fixed;
         top: 0;
         right: -100%;
@@ -341,14 +344,38 @@
           grid-template-columns: 1fr;
           gap: 10px;
           grid-template-rows: auto;
+          .wrap {
+            display: flex;
+            flex-direction: column;
+            .menu {
+              display: flex;
+              flex-direction: column;
+              margin-top: 10px;
+              animation: menu 0.3s ease forwards;
+              gap: 10px;
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                text-decoration: none;
+                color: #0f0f0f;
+              }
+              .active {
+                color: #d6b927;
+              }
+            }
+          }
           .text {
             display: flex;
+            align-items: baseline;
             gap: 10px;
             .link2 {
               text-decoration: none;
               font-size: 20px;
               font-weight: 600;
               color: #0f0f0f;
+            }
+            .active {
+              color: #d6b927;
             }
           }
           .text:nth-of-type(3) {
@@ -363,5 +390,25 @@
         }
       }
     }
+  }
+}
+
+@keyframes menu {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes forBurger {
+  0% {
+    right: -200px;
+  }
+  100% {
+    right: 0;
   }
 }
