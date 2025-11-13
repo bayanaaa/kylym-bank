@@ -25,6 +25,7 @@ function Header() {
   const [burgerOpen, setBurgerOpen] = useState(false);
   const [catOpen, setCatOpen] = useState(false);
   const [burgerLangOpen, setBurgerLangOpen] = useState(false);
+  const [hoverMenu, setHoverMenu] = useState(null);
 
   const searchRef = useRef(null);
   const langRef = useRef(null);
@@ -72,21 +73,36 @@ function Header() {
     </Link>
   ));
 
-  const mainNavs = headerArr.main.map((el, index) => (
-    <Link
-      to={el.link}
-      key={index}
-      className={`${scss.link2} ${
-        el.title === active || pathname === el.link ? scss.active : ""
-      }`}
-      onClick={() => {
-        setActive(el.title);
-        setBurgerOpen(false);
-      }}
-    >
-      {el.title}
-    </Link>
-  ));
+  const mainNavs = headerArr.main.map((el, index) => {
+    const hasMenu = el.menu && el.menu.length > 0;
+    return (
+      <div
+        key={index}
+        className={scss.navItem}
+        onMouseEnter={() => hasMenu && setHoverMenu(el.title)}
+        onMouseLeave={() => hasMenu && setHoverMenu(null)}
+      >
+        <Link
+          to={el.link}
+          className={`${scss.link2} ${
+            el.title === active || pathname === el.link ? scss.active : ""
+          }`}
+          onClick={() => setActive(el.title)}
+        >
+          {el.title}
+        </Link>
+        {hasMenu && hoverMenu === el.title && (
+          <div className={scss.dropdown}>
+            {el.menu.map((item, idx) => (
+              <Link key={idx} to={item.link} className={scss.dropdownItem}>
+                {item.text}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  });
 
   return (
     <div className={scss.parent}>

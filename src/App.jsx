@@ -13,6 +13,7 @@ import Tariffs from "./pages/Tariffs/Tariffs";
 import Transfers from "./pages/Transfers/Transfers";
 import CardApp from "./pages/Applications/Card/CardApp";
 import CreditApp from "./pages/Applications/Credit/CreditApp";
+import AllDeposits from "./components/Deposit/AllDeposits/AllDeposits";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           {/* <Route path="/card" element={<Cards />} /> */}
           <Route path="/cards" element={<BankCard />} />
           <Route path="/tariffs" element={<Tariffs />} />
+          <Route path="/all-deposits" element={<AllDeposits />} />
           <Route path="/card-application" element={<CardApp />} />
           <Route path="/credit-application" element={<CreditApp />} />
           <Route path="/transfers" element={<Transfers />} />
