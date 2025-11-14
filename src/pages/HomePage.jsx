@@ -14,7 +14,7 @@ function HomePage() {
         title={
           "Проверяйте баланс, оплачивайте услуги, получайте помощь в чате 24/7"
         }
-        heading={"Мобильное приложение KYLYM Bank"}
+        heading={"Мобильное приложение K-Bank"}
       />
       <Calculate />
       <News />
