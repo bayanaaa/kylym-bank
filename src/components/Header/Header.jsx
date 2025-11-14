@@ -68,7 +68,9 @@ function Header() {
       to={el.link}
       key={index}
       className={scss.link}
-      onClick={() => setBurgerOpen(false)}
+      onClick={() => {
+        setBurgerOpen(false), setCatOpen(false);
+      }}
     >
       {el.title}
     </Link>
@@ -263,7 +265,13 @@ function Header() {
                 <div className={scss.mobNav2}>
                   {headerArr.main.map((el, index) => (
                     <div className={scss.text} key={index}>
-                      {el.show && <img src={arrow} alt="arrow" />}
+                      {el.show && (
+                        <img
+                          src={arrow}
+                          alt="arrow"
+                          className={openMenu === el.title ? scss.rotated : ""}
+                        />
+                      )}
                       {el.link ? (
                         <Link
                           to={el.link}
