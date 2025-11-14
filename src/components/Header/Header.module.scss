@@ -253,7 +253,7 @@
         width: 90%;
         height: 100vh;
         z-index: 9999;
-
+        overflow-x: auto;
         &.open {
           right: 0;
         }
@@ -311,7 +311,7 @@
             gap: 10px;
             align-items: center;
             p {
-              font-size: 14px;
+              font-size: 16px;
               font-weight: 400;
               color: #0f0f0f;
             }
@@ -331,7 +331,7 @@
             margin-top: 10px;
             .link {
               text-decoration: none;
-              font-size: 14px;
+              font-size: 16px;
               font-weight: 400;
               color: #0f0f0f;
               transition: 0.2s ease-in;
@@ -352,9 +352,9 @@
               flex-direction: column;
               margin-top: 10px;
               animation: menu 0.3s ease forwards;
-              gap: 10px;
+              gap: 12px;
               .text {
-                font-size: 16px;
+                font-size: 17px;
                 font-weight: 500;
                 text-decoration: none;
                 color: #0f0f0f;
@@ -373,6 +373,9 @@
               font-size: 20px;
               font-weight: 600;
               color: #0f0f0f;
+            }
+            .rotated{
+              transform: rotate(270deg);
             }
             .active {
               color: #d6b927;

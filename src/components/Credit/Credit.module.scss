@@ -45,9 +45,33 @@
           appearance: none;
           height: 2px;
           background: #c2c9cc;
-          border-radius: 3px;
           outline: none;
         }
+
+        input[type="range"]::-webkit-slider-runnable-track {
+          height: 2px;
+          background: #c2c9cc;
+        }
+
+        input[type="range"]::-moz-range-track {
+          height: 6px;
+          background: red;
+          border-radius: 3px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 16px;
+          height: 16px;
+          background: #fff;
+          border: 2px solid #ffdd2d;
+          border-radius: 50%;
+          cursor: pointer;
+          margin-top: -6px;
+          transition: 0.3s;
+        }
+
         .bottom {
           display: flex;
           align-items: center;
@@ -141,6 +165,15 @@
       border-radius: 15px !important;
       padding: 20px !important;
     }
+    .box1{
+      .section1{
+        .bottom{
+          p{
+            font-size: 14px !important;
+          }
+        }
+      }
+    }
     .child {
       .name {
         font-size: 14px !important;
@@ -157,15 +190,15 @@
         }
       }
     }
-    .box3{
+    .box3 {
       margin-top: 30px !important;
-      h2{
+      h2 {
         font-size: 25px !important;
       }
     }
   }
-  .link{
-     height: 40px !important;
-      width: 160px !important;
+  .link {
+    height: 40px !important;
+    width: 160px !important;
   }
 }

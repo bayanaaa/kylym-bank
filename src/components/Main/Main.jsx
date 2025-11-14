@@ -24,19 +24,19 @@ function Main() {
     },
   ];
 
-  //   useEffect(() => {
-  //     const startAutoPlay = () => {
-  //       autoPlayRef.current = setInterval(() => {
-  //         setCurrentSlide((prev) => (prev + 1) % slideCount);
-  //       }, 4000);
-  //     };
+    useEffect(() => {
+      const startAutoPlay = () => {
+        autoPlayRef.current = setInterval(() => {
+          setCurrentSlide((prev) => (prev + 1) % slideCount);
+        }, 4000);
+      };
 
-  //     startAutoPlay();
+      startAutoPlay();
 
-  //     return () => {
-  //       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
-  //       };
-  //   }, [slideCount]);
+      return () => {
+        if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+        };
+    }, [slideCount]);
 
   const goToSlide = (index) => {
     setCurrentSlide(index);
